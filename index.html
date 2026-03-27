@@ -411,6 +411,7 @@
       background-color: #efe4d3;
     }
 
+    /* Responsive */
     @media (max-width: 860px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
@@ -428,6 +429,10 @@
     }
 
     @media (max-width: 640px) {
+      header {
+        padding: 16px 16px 40px;
+        background-position: center;
+      }
       .nav {
         flex-direction: column;
         gap: 12px;
@@ -435,6 +440,22 @@
       }
       .nav-links {
         gap: 14px;
+      }
+      .hero {
+        gap: 24px;
+      }
+      .hero-text h1 {
+        font-size: 1.9rem;
+      }
+      .section {
+        padding: 48px 16px 32px;
+      }
+      .hero-buttons {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
@@ -456,7 +477,9 @@
     <div class="hero">
       <div class="hero-text">
         <h1>Eriklassic World of Fashion</h1>
-        <p class="tagline">Where fashion meets affordability – premium Adire, bespoke ready‑to‑wear, aso oke, shoes and handbags.</p>
+        <p class="tagline">
+          Where fashion meets affordability – premium Adire, bespoke ready‑to‑wear, aso oke, shoes and handbags.
+        </p>
         <p class="location">Based in FCT, Abuja, Nigeria.</p>
         <div class="hero-buttons">
           <a href="#collections" class="btn btn-primary">View Collections</a>
@@ -465,6 +488,7 @@
       </div>
 
       <aside class="hero-card">
+        <!-- you can change this to one of the fabric photos if you like -->
         <img src="assets/logo-light.jpg" alt="Eriklassic emblem" />
         <div class="hero-pills">
           <span class="hero-pill">Adire Fabrics</span>
@@ -538,6 +562,66 @@
       </div>
     </section>
 
+    <!-- Featured Pieces -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Featured Pieces</h2>
+        <p class="section-sub">
+          A glimpse of our Adire fabrics and ready‑to‑wear looks available at Eriklassic.
+        </p>
+      </div>
+
+      <div class="collections-grid">
+        <article class="collection-card">
+          <img src="assets/adire-circles.jpg" alt="Adire fabrics with circular patterns" style="width:100%;border-radius:14px;margin-bottom:10px;">
+          <h3 class="collection-name">Bold Circle Adire</h3>
+          <p class="collection-text">
+            Vivid circular motifs in rich colours – perfect for boubous, two‑pieces and statement dresses.
+          </p>
+        </article>
+
+        <article class="collection-card">
+          <img src="assets/adire-leaves.jpg" alt="Adire fabrics with leaf patterns" style="width:100%;border-radius:14px;margin-bottom:10px;">
+          <h3 class="collection-name">Leaf Motif Adire</h3>
+          <p class="collection-text">
+            Nature‑inspired leaf prints, ideal for casual chic and event outfits.
+          </p>
+        </article>
+
+        <article class="collection-card">
+          <img src="assets/adire-flowers.jpg" alt="Adire fabrics with floral patterns" style="width:100%;border-radius:14px;margin-bottom:10px;">
+          <h3 class="collection-name">Floral Adire Mix</h3>
+          <p class="collection-text">
+            Playful floral and geometric patterns in bright, happy tones.
+          </p>
+        </article>
+
+        <article class="collection-card">
+          <img src="assets/adire-rings.jpg" alt="Adire fabrics in mixed colours" style="width:100%;border-radius:14px;margin-bottom:10px;">
+          <h3 class="collection-name">Soft Tone Adire</h3>
+          <p class="collection-text">
+            Soft yet colourful designs that work beautifully for everyday wear.
+          </p>
+        </article>
+
+        <article class="collection-card">
+          <img src="assets/adire-blossom.jpg" alt="Adire fabrics with blossom patterns" style="width:100%;border-radius:14px;margin-bottom:10px;">
+          <h3 class="collection-name">Blossom Adire</h3>
+          <p class="collection-text">
+            Eye‑catching blossom prints for parties, church and owambe looks.
+          </p>
+        </article>
+
+        <article class="collection-card">
+          <img src="assets/readywear-striped-kaftan.jpg" alt="Striped kaftan ready to wear outfit" style="width:100%;border-radius:14px;margin-bottom:10px;">
+          <h3 class="collection-name">Striped Kaftan</h3>
+          <p class="collection-text">
+            Colourful, comfortable kaftan from our bespoke ready‑to‑wear collection.
+          </p>
+        </article>
+      </div>
+    </section>
+
     <!-- About -->
     <section id="about" class="section">
       <div class="section-header">
@@ -572,7 +656,7 @@
       </div>
     </section>
 
-        <!-- Contact -->
+    <!-- Contact -->
     <section id="contact" class="section">
       <div class="section-header">
         <h2 class="section-title">Visit &amp; Contact</h2>
