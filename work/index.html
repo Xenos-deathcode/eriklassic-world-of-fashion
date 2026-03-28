@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eriklassic World of Fashion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --bg-light: #f7f2e9;
+      --text-dark: #222222;
+      --text-light: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      min-height: 100vh;
+      padding: 20px 24px 60px;
+      color: var(--text-light);
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95)),
+        url("assets/logo-dark.jpg") center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.4);
+      object-fit: cover;
+    }
+    .nav-logo span {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-right: 32px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.9rem;
+    }
+    .nav-links a { position: relative; padding-bottom: 4px; }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      height: 2px; width: 0;
+      background-color: var(--gold);
+      transition: width 0.2s ease-out;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero-text p.tagline {
+      margin-top: 12px;
+      font-size: 1rem;
+      max-width: 26rem;
+      color: #e6e6e6;
+    }
+    .hero-text p.location {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #c9c9c9;
+    }
+    .hero-buttons {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn {
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .btn-primary {
+      background-color: var(--gold);
+      color: #111111;
+      font-weight: 600;
+    }
+    .btn-primary:hover {
+      background-color: #f7d46c;
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background-color: transparent;
+      border-color: rgba(255,255,255,0.5);
+      color: #f2f2f2;
+    }
+    .btn-outline:hover {
+      background-color: rgba(255,255,255,0.08);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+    .hero-card {
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 24px;
+      padding: 22px 24px;
+      border: 1px solid rgba(212,175,55,0.6);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.8);
+      backdrop-filter: blur(6px);
+    }
+    .hero-card img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      object-fit: cover;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.75rem;
+    }
+    .hero-pill {
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #f0e1c7;
+      padding: 24px 16px 8px;
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero-card { margin-top: 24px; }
+      header { background-attachment: scroll; }
+    }
+    @media (max-width: 640px) {
+      header {
+        padding: 16px 16px 40px;
+        background-position: center;
+      }
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .nav-links { gap: 14px; }
+      .hero { gap: 24px; }
+      .hero-text h1 { font-size: 1.9rem; }
+      .hero-buttons { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+  <div class="nav-logo">
+    <img src="assets/logo-dark.jpg" alt="Eriklassic logo" />
+    <span>ERIKLASSIC • WORLD OF FASHION</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="collections.html">Collections</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Eriklassic World of Fashion</h1>
+        <p class="tagline">
+          Where fashion meets affordability – premium Adire, bespoke ready‑to‑wear, aso oke, shoes and handbags.
+        </p>
+        <p class="location">FCT, Abuja, Nigeria.</p>
+        <div class="hero-buttons">
+          <a href="collections.html" class="btn btn-primary">View Collections</a>
+          <a href="contact.html" class="btn btn-outline">Contact Eriklassic</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <img src="assets/logo-light.jpg" alt="Eriklassic emblem" />
+        <div class="hero-pills">
+          <span class="hero-pill">Adire Fabrics</span>
+          <span class="hero-pill">Ready‑to‑Wear</span>
+          <span class="hero-pill">Aso Oke</span>
+          <span class="hero-pill">Shoes &amp; Handbags</span>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Eriklassic World of Fashion. Where fashion meets affordability.
+    </footer>
+  </header>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
