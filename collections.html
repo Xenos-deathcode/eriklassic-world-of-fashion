@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Collections • Eriklassic World of Fashion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --bg-light: #f7f2e9;
+      --text-dark: #222222;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        linear-gradient(to bottom, rgba(247,242,233,0.96), rgba(247,242,233,0.98)),
+        url("assets/logo-light.jpg") center/460px repeat;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Nav */
+    .nav-wrapper {
+      background-color: #0b0b0f;
+      color: #ffffff;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.4);
+      object-fit: cover;
+    }
+
+    .nav-logo span {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background-color: var(--gold);
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #111111;
+    }
+
+    .section-sub {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: #5b4b37;
+    }
+
+    /* Cards grid */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .collection-card {
+      background-color: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.04);
+    }
+
+    .collection-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #9b875b;
+      margin-bottom: 6px;
+    }
+
+    .collection-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .collection-text {
+      font-size: 0.9rem;
+      color: #574839;
+      margin-bottom: 12px;
+    }
+
+    .collection-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.78rem;
+    }
+
+    .collection-tag {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background-color: rgba(212,175,55,0.08);
+      color: #735e2b;
+    }
+
+    .collection-card img {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 10px;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #6b5a3c;
+      padding: 24px 16px 32px;
+      background-color: #efe4d3;
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .nav-links { gap: 14px; }
+      .section { padding: 32px 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="nav-wrapper">
+      <nav class="nav">
+        <div class="nav-logo">
+          <img src="assets/logo-dark.jpg" alt="Eriklassic logo" />
+          <span>ERIKLASSIC • WORLD OF FASHION</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="collections.html" class="active">Collections</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Collections overview -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Collections</h2>
+        <p class="section-sub">
+          Curated looks for everyday elegance, parties and special occasions.
+        </p>
+      </div>
+
+      <div class="collections-grid">
+        <article class="collection-card">
+          <p class="collection-label">Signature</p>
+          <h3 class="collection-name">Adire Fabrics</h3>
+          <p class="collection-text">
+            Handpicked Adire of all kinds – from soft, subtle patterns to bold statement prints for dresses, boubous, two‑pieces and more.
+          </p>
+          <div class="collection-tags">
+            <span class="collection-tag">Hand‑dyed</span>
+            <span class="collection-tag">Rich colours</span>
+            <span class="collection-tag">Custom orders</span>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <p class="collection-label">Everyday &amp; Events</p>
+          <h3 class="collection-name">Bespoke Ready‑to‑Wear</h3>
+          <p class="collection-text">
+            Chic, easy‑to‑wear outfits tailored to flatter you – ready to pick up and step out in style without the stress of sewing from scratch.
+          </p>
+          <div class="collection-tags">
+            <span class="collection-tag">Casual</span>
+            <span class="collection-tag">Occasion wear</span>
+            <span class="collection-tag">Size‑inclusive</span>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <p class="collection-label">Trad Luxe</p>
+          <h3 class="collection-name">Aso Oke</h3>
+          <p class="collection-text">
+            Premium aso oke for traditional weddings, engagements and celebrations – designed to match your colour theme perfectly.
+          </p>
+          <div class="collection-tags">
+            <span class="collection-tag">Parties &amp; owambe</span>
+            <span class="collection-tag">Couple sets</span>
+            <span class="collection-tag">Custom colours</span>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <p class="collection-label">Finishing Touch</p>
+          <h3 class="collection-name">Shoes &amp; Handbags</h3>
+          <p class="collection-text">
+            Stylish shoes and bags to complete your look – from classy heels to chic handbags that pair perfectly with your outfits.
+          </p>
+          <div class="collection-tags">
+            <span class="collection-tag">Co‑ordinated sets</span>
+            <span class="collection-tag">Statement pieces</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Featured Pieces -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Featured Pieces</h2>
+        <p class="section-sub">
+          A glimpse of our Adire fabrics and ready‑to‑wear looks available at Eriklassic.
+        </p>
+      </div>
+
+      <div class="collections-grid">
+        <article class="collection-card">
+          <img src="assets/adire-circles.jpg" alt="Adire fabrics with circular patterns">
+          <h3 class="collection-name">Bold Circle Adire</h3>
+          <p class="collection-text">
+            Vivid circular motifs in rich colours – perfect for boubous, two‑pieces and statement dresses.
+          </p>
+        </article>
+
+        <article class="collection-card">
+          <img src="assets/adire-leaves.jpg" alt="Adire fabrics with leaf patterns">
+          <h3 class="collection-name">Leaf Motif Adire</h3>
+          <p class="collection-text">
+            Nature‑inspired leaf prints, ideal for casual chic and event outfits.
+          </p>
+        </article>
+
+        <article class="collection-card">
+          <img src="assets/adire-flowers.jpg" alt="Adire fabrics with floral patterns">
+          <h3 class="collection-name">Floral Adire Mix</h3>
+          <p class="collection-text">
+            Playful floral and geometric patterns in bright, happy tones.
+          </p>
+        </article>
+
+        <article class="collection-card">
+          <img src="assets/adire-rings.jpg" alt="Adire fabrics in mixed colours">
+          <h3 class="collection-name">Soft Tone Adire</h3>
+          <p class="collection-text">
+            Soft yet colourful designs that work beautifully for everyday wear.
+          </p>
+        </article>
+
+        <article class="collection-card">
+          <img src="assets/adire-blossom.jpg" alt="Adire fabrics with blossom patterns">
+          <h3 class="collection-name">Blossom Adire</h3>
+          <p class="collection-text">
+            Eye‑catching blossom prints for parties, church and owambe looks.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Eriklassic World of Fashion. Where fashion meets affordability.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
